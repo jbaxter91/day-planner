@@ -4,7 +4,8 @@
 
 This simple day planner can help you get organized by saving your hour by hour schedule for you.  Just enter the info you want to save into the hour slot, and click save.  Its that easy!  The planner will even wipe clean for you each new day so you can plan another amazing day.
 
-
+## Come check out the deployed version here
+https://jbaxter91.github.io/day-planner/index.html
 
 
 ## Day Planner
