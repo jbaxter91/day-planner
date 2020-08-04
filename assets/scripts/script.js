@@ -5,9 +5,9 @@
 
 // ----- Consts -------
     // Change this value to chang the starting time of the planner
-const STARTING_HOUR = 4;
+const STARTING_HOUR = 9;
     // Change this value to chang the stopping time of the planner
-const STOPPING_HOUR = 23;
+const STOPPING_HOUR = 17;
     // Cached Reference to hours container
 const HOURS_CONTAINER = $("#hoursContainer");
     // Cached reference to current day display element
@@ -108,13 +108,16 @@ function RenderDay()
     }
 }
 
+
 // LoadDayInfo is used to load all the info to be filled into the per hour input fields
 function LoadDayInfo()
 {
     var savedDay = localStorage.getItem("day");
+    console.log("curDay: " + curDay);
     if(!savedDay)
     {
         // No save data found, setting it to current day
+        console.log("No Day set, setting it now");
         localStorage.setItem("day", curDay);
     }
 
@@ -141,11 +144,9 @@ function LoadDayInfo()
     else
     {
         // Clear out save data
-        for(var i = 0; i < 24; i++)
-        {
-            console.log("New Day!  Removing Yesterdays stuff");
-            localStorage.removeItem(i);
-        }
+        console.log("Starting a new day!");
+        localStorage.clear();
+        localStorage.setItem("day", curDay);
     }
 }
 
